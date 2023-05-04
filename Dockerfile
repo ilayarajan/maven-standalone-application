@@ -1,4 +1,3 @@
-FROM openjdk:8-jdk-slim
-WORKDIR /app
-COPY target/maven-standalone-application*.jar maven-standalone-application.jar
-CMD ["java","-jar","maven-standalone-application.jar"]
+FROM tomcat:8.0.20-jre8 
+COPY target/maven-web-application*.war /usr/local/tomcat/webapps/maven-web-application.war
+
